@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Pierre_Papier_Ciseaux_Fighter</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="paper.png" />
+    <None Remove="rock.png" />
+    <None Remove="scissors.png" />
+    <None Remove="_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\paper.png" />
+    <Resource Include="resources\rock.png" />
+    <Resource Include="resources\scissors.png" />
+    <Resource Include="resources\_icon.png" />
+  </ItemGroup>
+
+</Project>

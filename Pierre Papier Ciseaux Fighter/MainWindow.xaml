@@ -1,0 +1,60 @@
+﻿<Window x:Class="Pierre_Papier_Ciseaux_Fighter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pierre_Papier_Ciseaux_Fighter"
+        mc:Ignorable="d"
+        Title="Pierre Feuille Ciseaux Fighter" Height="700" Width="933" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ContentRendered="Window_ContentRendered" Icon="resources/_icon.png" >
+    <Grid>
+        <!-- BORDURE POUR RECUPERER L'IMAGE DE FOND -->
+        <Border x:Name="resources_border_paper" Visibility="Collapsed" Width="0" Height="0" >
+            <Border.Background>
+                <ImageBrush ImageSource="resources/paper.png"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="resources_border_scissors" Visibility="Collapsed" Width="0" Height="0" >
+            <Border.Background>
+                <ImageBrush ImageSource="resources/scissors.png"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="resources_border_rock" Visibility="Collapsed" Width="0" Height="0" >
+            <Border.Background>
+                <ImageBrush ImageSource="resources/rock.png"/>
+            </Border.Background>
+        </Border>
+
+        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="620" Height="620" Margin="0,0,0,0" BorderBrush="Black" BorderThickness="2,2,2,2">
+            <Canvas x:Name="Canvas_Board" Margin="0,0,0,0"/>
+        </Border>
+
+        <Label Content="Papiers :" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="150,0,0,5" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtBox_papiers" Margin="236,0,623,6" Text="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" MaxLength="3" VerticalAlignment="Bottom"/>
+        <Label Content="Pierres :" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="314,0,0,5" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtBox_pierres" Margin="392,0,467,6" Text="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" MaxLength="3" VerticalAlignment="Bottom"/>
+        <Label Content="Ciseaux :" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="472,0,0,5" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtBox_ciseaux" Margin="558,0,301,6" Text="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" MaxLength="3" VerticalAlignment="Bottom"/>
+        <Button Margin="679,0,157,6" Content="Valider" FontSize="20" Background="White" Click="Button_Valider_Click" VerticalAlignment="Bottom"/>
+        <Label Content="Stack éléments ?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-5,1,0,0" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="156"/>
+        <CheckBox x:Name="checkBox_stackElement" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="65,43,0,0" RenderTransformOrigin="0.5,0.5">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <Slider  HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Vertical" Minimum="0.01" Maximum="1000" Margin="0,20,20,500" Value="1" ValueChanged="Slider_FPS_ValueChanged"/>
+        <Label Content="FPS" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,15,0"/>
+        <Label Content="SPEED" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,187,9,0"/>
+        <Slider  HorizontalAlignment="Right" Orientation="Vertical" Minimum="0.01" Maximum="10" Margin="0,205,20,23" Value="1" ValueChanged="Slider_MoveSpeed_ValueChanged"/>
+        <Slider  HorizontalAlignment="Right" Orientation="Vertical" Minimum="5" Maximum="100" Margin="0,20,66,500" Value="20" ValueChanged="Slider_SIZE_ValueChanged"/>
+        <Label Content="SIZE" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,59,0"/>
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1,0,0,5" Foreground="Red" Text="Pensez à réduire le nombre de FPS avant de mettre des grands nombres !" TextWrapping="Wrap" Height="62" Width="150">
+
+        </TextBlock>
+    </Grid>
+</Window>
